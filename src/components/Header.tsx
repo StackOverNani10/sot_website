@@ -1,4 +1,4 @@
-import { Clock, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -34,7 +34,7 @@ export default function Header() {
             <nav className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     <div className="w-14 h-14 flex items-center justify-center cursor-pointer" onClick={() => handleNavigation('home')}>
-                        <img src="/src/assets/sot_logo.png" alt="SOT Logo" className="w-full h-full object-contain" />
+                        <img src="https://res.cloudinary.com/deqtp71ut/image/upload/v1760054666/SOT/sot_logo.png" alt="SOT Logo" className="w-full h-full object-contain" />
                     </div>
 
                     <div className="hidden md:flex items-center space-x-8">

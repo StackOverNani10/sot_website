@@ -1,4 +1,4 @@
-import { Clock, Linkedin, Twitter, Instagram, Github } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Github } from 'lucide-react';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div className="col-span-1 md:col-span-2">
                         <div className="w-16 h-16 flex items-center justify-center">
-                            <img src="/src/assets/sot_logo.png" alt="SOT Logo" className="w-full h-full object-contain" />
+                            <img src="https://res.cloudinary.com/deqtp71ut/image/upload/v1760054666/SOT/sot_logo.png" alt="SOT Logo" className="w-full h-full object-contain" />
                         </div>
                         <p className="text-gray-400 mb-4 max-w-md">
                             Service On Time - Tecnología que optimiza el tiempo, potencia la eficiencia y transforma experiencias.
