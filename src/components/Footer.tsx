@@ -1,4 +1,6 @@
-import { Linkedin, Twitter, Instagram, Github } from 'lucide-react';
+import { Linkedin, Instagram, Github } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -22,16 +24,16 @@ export default function Footer() {
                             Service On Time - Tecnología que optimiza el tiempo, potencia la eficiencia y transforma experiencias.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <a href="https://www.linkedin.com/in/sotplatform" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                                <Twitter className="w-5 h-5" />
+                            <a href="https://www.tiktok.com/@sotplatform?is_from_webapp=1&sender_device=pc" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <FontAwesomeIcon icon={faTiktok} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <a href="https://www.instagram.com/sotplatform?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                                 <Instagram className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <a href="https://github.com/StackOverNani10/sot_website" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                                 <Github className="w-5 h-5" />
                             </a>
                         </div>

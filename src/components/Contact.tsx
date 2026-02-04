@@ -1,5 +1,9 @@
 import { Mail, MessageSquare, Building2, Send } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+// Inicializa EmailJS con tu SERVICE_ID (obtén uno gratis en https://www.emailjs.com)
+emailjs.init('34KPJb5eDeV5RSH2_');
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -9,11 +13,33 @@ export default function Contact() {
         message: ''
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Gracias por tu mensaje. Te contactaremos pronto.');
-        setFormData({ name: '', email: '', subject: 'general', message: '' });
+        setIsLoading(true);
+
+        try {
+            await emailjs.send(
+                'service_ptfdt1i', // Tu Service ID de EmailJS
+                'template_w297gcs', // Tu Template ID de EmailJS
+                {
+                    to_email: 'admin@sot.com.do',
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                }
+            );
+
+            alert('¡Mensaje enviado correctamente! Te contactaremos pronto.');
+            setFormData({ name: '', email: '', subject: 'general', message: '' });
+        } catch (error) {
+            console.error('Error al enviar el mensaje:', error);
+            alert('Error al enviar el mensaje. Por favor, intenta nuevamente.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -40,19 +66,19 @@ export default function Contact() {
                         <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
                             <Mail className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                             <h3 className="font-semibold text-white mb-2">Email</h3>
-                            <p className="text-sm text-gray-400">contacto@sot.tech</p>
+                            <p className="text-sm text-gray-400">admin@sot.com.do</p>
                         </div>
 
                         <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
                             <MessageSquare className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                             <h3 className="font-semibold text-white mb-2">Soporte</h3>
-                            <p className="text-sm text-gray-400">soporte@sot.tech</p>
+                            <p className="text-sm text-gray-400">admin@sot.com.do</p>
                         </div>
 
                         <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
                             <Building2 className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                             <h3 className="font-semibold text-white mb-2">Alianzas</h3>
-                            <p className="text-sm text-gray-400">alianzas@sot.tech</p>
+                            <p className="text-sm text-gray-400">admin@sot.com.do</p>
                         </div>
                     </div>
 
@@ -129,9 +155,10 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2 font-semibold shadow-lg hover:shadow-xl"
+                                disabled={isLoading}
+                                className="w-full py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-all transform hover:scale-105 flex items-center justify-center space-x-2 font-semibold shadow-lg hover:shadow-xl"
                             >
-                                <span>Enviar mensaje</span>
+                                <span>{isLoading ? 'Enviando...' : 'Enviar mensaje'}</span>
                                 <Send className="w-5 h-5" />
                             </button>
                         </form>
