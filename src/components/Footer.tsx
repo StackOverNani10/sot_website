@@ -1,11 +1,22 @@
+import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, Github } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const scrollToSection = (id: string) => {
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+            return;
+        }
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -69,24 +80,24 @@ export default function Footer() {
                         <h3 className="font-bold text-lg mb-4">Productos</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={() => navigate('/producto/sot-menu')} className="text-gray-400 hover:text-white transition-colors">
                                     SOT Menu
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={() => navigate('/sot-service')} className="text-gray-400 hover:text-white transition-colors">
                                     SOT Service
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={() => navigate('/sot-provider')} className="text-gray-400 hover:text-white transition-colors">
+                                    SOT Provider
+                                </button>
+                            </li>
+                            <li>
+                                <button onClick={() => navigate('/producto/sot-future')} className="text-gray-400 hover:text-white transition-colors">
                                     SOT Future
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                    API y Documentación
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -98,9 +109,9 @@ export default function Footer() {
                             © {currentYear} SOT - Service On Time. Todos los derechos reservados.
                         </p>
                         <div className="flex space-x-6 text-sm">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                            <Link to="/privacidad" className="text-gray-400 hover:text-white transition-colors">
                                 Política de Privacidad
-                            </a>
+                            </Link>
                             <a href="#" className="text-gray-400 hover:text-white transition-colors">
                                 Términos de Servicio
                             </a>
