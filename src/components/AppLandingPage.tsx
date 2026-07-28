@@ -33,7 +33,7 @@ export interface AppLandingConfig {
 
 /** Renderiza una captura real dentro del marco del teléfono. */
 function Screen({ src, alt }: { src: string; alt: string }) {
-    return <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />;
+    return <img src={src} alt={alt} className="w-full h-full object-cover object-top" loading="lazy" />;
 }
 
 export default function AppLandingPage({ config }: { config: AppLandingConfig }) {
