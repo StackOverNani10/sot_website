@@ -80,11 +80,6 @@ export default function Footer() {
                         <h3 className="font-bold text-lg mb-4">Productos</h3>
                         <ul className="space-y-2">
                             <li>
-                                <button onClick={() => navigate('/producto/sot-menu')} className="text-gray-400 hover:text-white transition-colors">
-                                    SOT Menu
-                                </button>
-                            </li>
-                            <li>
                                 <button onClick={() => navigate('/sot-service')} className="text-gray-400 hover:text-white transition-colors">
                                     SOT Service
                                 </button>
@@ -92,11 +87,6 @@ export default function Footer() {
                             <li>
                                 <button onClick={() => navigate('/sot-provider')} className="text-gray-400 hover:text-white transition-colors">
                                     SOT Provider
-                                </button>
-                            </li>
-                            <li>
-                                <button onClick={() => navigate('/producto/sot-future')} className="text-gray-400 hover:text-white transition-colors">
-                                    SOT Future
                                 </button>
                             </li>
                         </ul>
