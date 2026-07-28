@@ -18,37 +18,21 @@ export default function Ecosystem() {
                         <div className="relative">
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl opacity-30"></div>
 
-                            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 text-center border-2 border-gray-700/50">
-                                    <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-white font-bold text-xl">SM</span>
-                                    </div>
-                                    <h3 className="font-bold text-white mb-2">SOT Menu</h3>
-                                    <p className="text-sm text-gray-400">Restaurantes</p>
-                                </div>
-
+                            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-xl mx-auto">
                                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 text-center border-2 border-gray-700/50">
                                     <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <span className="text-white font-bold text-xl">SS</span>
                                     </div>
                                     <h3 className="font-bold text-white mb-2">SOT Service</h3>
-                                    <p className="text-sm text-gray-400">Servicios</p>
+                                    <p className="text-sm text-gray-400">Servicios · App Cliente</p>
                                 </div>
 
                                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 text-center border-2 border-gray-700/50">
-                                    <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-white font-bold text-xl">SM</span>
+                                    <div className="w-16 h-16 bg-violet-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <span className="text-white font-bold text-xl">SP</span>
                                     </div>
-                                    <h3 className="font-bold text-white mb-2">SOT Move</h3>
-                                    <p className="text-sm text-gray-400">Movilidad Eléctrica</p>
-                                </div>
-
-                                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 text-center border-2 border-gray-700/50">
-                                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-white font-bold text-xl">SF</span>
-                                    </div>
-                                    <h3 className="font-bold text-white mb-2">SOT Future</h3>
-                                    <p className="text-sm text-gray-400">Innovación</p>
+                                    <h3 className="font-bold text-white mb-2">SOT Provider</h3>
+                                    <p className="text-sm text-gray-400">Servicios · App Profesional</p>
                                 </div>
                             </div>
                         </div>

@@ -61,6 +61,11 @@ export default function Products() {
         navigate(dedicatedLandingPages[productId] ?? `/producto/${productId}`);
     };
 
+    // Solo se muestran las apps activas (SOT Service y SOT Provider). El resto
+    // del ecosistema queda oculto hasta su lanzamiento.
+    const visibleIds = ['sot-service', 'sot-provider'];
+    const visibleProducts = products.filter((p) => visibleIds.includes(p.id));
+
     return (
         <section id="products" className="py-20 bg-transparent">
             <div className="container mx-auto px-6">
@@ -74,8 +79,8 @@ export default function Products() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {products.map((product) => {
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        {visibleProducts.map((product) => {
                             const Icon = product.icon;
                             return (
                                 <div
