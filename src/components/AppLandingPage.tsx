@@ -6,8 +6,6 @@ import Header from './Header';
 import Footer from './Footer';
 import StoreButtons from './StoreButtons';
 import PhoneMockup from './PhoneMockup';
-import { HomeScreen, ProfileScreen, TrackingScreen } from './AppMockScreens';
-import type { HomeItem, ScreenTheme } from './AppMockScreens';
 
 export interface AppLandingConfig {
     eyebrow: string;
@@ -15,22 +13,27 @@ export interface AppLandingConfig {
     highlight: string;
     description: string;
     icon: LucideIcon;
-    theme: ScreenTheme & { accentBorder: string };
+    theme: {
+        accentFrom: string;
+        accentTo: string;
+        accentText: string;
+        accentBg: string;
+        accentSoftBg: string;
+        accentBorder: string;
+    };
     badges: string[];
     forWhom: string;
     features: { icon: LucideIcon; title: string; description: string }[];
     steps: { title: string; description: string }[];
-    home: { greeting: string; items: HomeItem[] };
-    tracking: { name: string; role: string; rating: string; eta: string; statusLabel: string };
-    profile: {
-        name: string;
-        role: string;
-        rating: string;
-        stats: { label: string; value: string }[];
-        activity: { label: string; amount: string; time: string }[];
-    };
+    /** Capturas reales de la app (rutas importadas). */
+    screens: { primary: string; secondary: string; tertiary: string };
     ctaTitle: string;
     ctaDescription: string;
+}
+
+/** Renderiza una captura real dentro del marco del teléfono. */
+function Screen({ src, alt }: { src: string; alt: string }) {
+    return <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />;
 }
 
 export default function AppLandingPage({ config }: { config: AppLandingConfig }) {
@@ -101,12 +104,12 @@ export default function AppLandingPage({ config }: { config: AppLandingConfig })
                             <div className="relative flex justify-center lg:justify-end pb-10">
                                 <div className="relative w-56">
                                     <PhoneMockup accentFrom={theme.accentFrom} accentTo={theme.accentTo} className="relative z-10">
-                                        <HomeScreen theme={theme} greeting={config.home.greeting} items={config.home.items} />
+                                        <Screen src={config.screens.primary} alt={`${config.eyebrow} — pantalla principal`} />
                                     </PhoneMockup>
                                 </div>
                                 <div className="absolute -bottom-8 -left-4 w-44 hidden sm:block">
                                     <PhoneMockup accentFrom={theme.accentFrom} accentTo={theme.accentTo} glow={false}>
-                                        <TrackingScreen theme={theme} {...config.tracking} />
+                                        <Screen src={config.screens.secondary} alt={`${config.eyebrow} — segunda pantalla`} />
                                     </PhoneMockup>
                                 </div>
                             </div>
@@ -182,17 +185,17 @@ export default function AppLandingPage({ config }: { config: AppLandingConfig })
                     <div className="flex flex-wrap justify-center items-end gap-8 max-w-4xl mx-auto">
                         <div className="w-48">
                             <PhoneMockup accentFrom={theme.accentFrom} accentTo={theme.accentTo}>
-                                <HomeScreen theme={theme} greeting={config.home.greeting} items={config.home.items} />
+                                <Screen src={config.screens.primary} alt={`${config.eyebrow} — pantalla principal`} />
                             </PhoneMockup>
                         </div>
                         <div className="w-52 -mb-6">
                             <PhoneMockup accentFrom={theme.accentFrom} accentTo={theme.accentTo}>
-                                <TrackingScreen theme={theme} {...config.tracking} />
+                                <Screen src={config.screens.secondary} alt={`${config.eyebrow} — segunda pantalla`} />
                             </PhoneMockup>
                         </div>
                         <div className="w-48">
                             <PhoneMockup accentFrom={theme.accentFrom} accentTo={theme.accentTo}>
-                                <ProfileScreen theme={theme} {...config.profile} />
+                                <Screen src={config.screens.tertiary} alt={`${config.eyebrow} — tercera pantalla`} />
                             </PhoneMockup>
                         </div>
                     </div>

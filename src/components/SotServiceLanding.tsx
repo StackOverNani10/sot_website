@@ -1,6 +1,9 @@
-import { Wrench, MapPin, ShieldCheck, Clock, CreditCard, MessageCircle, Star, Sparkles } from 'lucide-react';
+import { Wrench, MapPin, ShieldCheck, Clock, CreditCard, MessageCircle, Star } from 'lucide-react';
 import AppLandingPage from './AppLandingPage';
 import type { AppLandingConfig } from './AppLandingPage';
+import serviceHome from '../assets/screens/service-home.png';
+import serviceTracking from '../assets/screens/service-tracking.png';
+import serviceProfile from '../assets/screens/service-profile.png';
 
 const theme = {
     accentFrom: 'from-blue-500',
@@ -59,34 +62,10 @@ const config: AppLandingConfig = {
         { title: 'Sigue', description: 'Monitorea la llegada y el avance del servicio en tiempo real.' },
         { title: 'Paga y califica', description: 'Cierra el servicio con un pago seguro y deja tu reseña.' },
     ],
-    home: {
-        greeting: 'Daniela',
-        items: [
-            { icon: Wrench, title: 'Plomería', subtitle: '3 técnicos cerca de ti', status: 'Disponible' },
-            { icon: Sparkles, title: 'Limpieza del hogar', subtitle: 'Desde RD$ 900', status: 'Popular' },
-            { icon: ShieldCheck, title: 'Electricidad', subtitle: 'Respuesta en 15 min', status: 'Rápido' },
-        ],
-    },
-    tracking: {
-        name: 'Carlos Pérez',
-        role: 'Técnico en plomería',
-        rating: '4.9',
-        eta: 'Llega en 8 minutos',
-        statusLabel: 'En camino a tu ubicación',
-    },
-    profile: {
-        name: 'Daniela Ruiz',
-        role: 'Cliente SOT Service',
-        rating: '4.8',
-        stats: [
-            { label: 'Servicios', value: '12' },
-            { label: 'Favoritos', value: '4' },
-            { label: 'Ahorro', value: '18%' },
-        ],
-        activity: [
-            { label: 'Limpieza del hogar', amount: 'RD$ 1,200', time: 'Hace 2 días' },
-            { label: 'Reparación eléctrica', amount: 'RD$ 850', time: 'Hace 1 semana' },
-        ],
+    screens: {
+        primary: serviceHome,
+        secondary: serviceTracking,
+        tertiary: serviceProfile,
     },
     ctaTitle: '¿Listo para ahorrar tiempo?',
     ctaDescription: 'Sé de los primeros en descargar SOT Service cuando esté disponible. Déjanos tu contacto y te avisamos.',

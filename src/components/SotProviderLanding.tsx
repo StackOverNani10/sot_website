@@ -1,6 +1,9 @@
-import { Briefcase, TrendingUp, Calendar, Wallet, BarChart3, Award, Bell, Wrench } from 'lucide-react';
+import { Briefcase, TrendingUp, Calendar, Wallet, BarChart3, Award, Bell } from 'lucide-react';
 import AppLandingPage from './AppLandingPage';
 import type { AppLandingConfig } from './AppLandingPage';
+import providerEarnings from '../assets/screens/provider-earnings.png';
+import providerDetail from '../assets/screens/provider-detail.png';
+import providerProfile from '../assets/screens/provider-profile.png';
 
 const theme = {
     accentFrom: 'from-violet-500',
@@ -59,34 +62,10 @@ const config: AppLandingConfig = {
         { title: 'Brinda el servicio', description: 'Acepta, coordina con el cliente y realiza el trabajo.' },
         { title: 'Cobra al instante', description: 'Recibe tu pago de forma segura apenas termines el servicio.' },
     ],
-    home: {
-        greeting: 'Carlos',
-        items: [
-            { icon: Wrench, title: 'Nueva solicitud: Plomería', subtitle: 'A 1.2 km · RD$ 900', status: 'Nuevo' },
-            { icon: Calendar, title: 'Servicio agendado', subtitle: 'Mañana, 10:00 AM', status: 'Confirmado' },
-            { icon: Wallet, title: 'Pago recibido', subtitle: 'Reparación eléctrica', status: 'RD$ 850' },
-        ],
-    },
-    tracking: {
-        name: 'Daniela Ruiz',
-        role: 'Cliente en Piantini',
-        rating: '4.8',
-        eta: 'A 8 minutos del cliente',
-        statusLabel: 'En camino al servicio',
-    },
-    profile: {
-        name: 'Carlos Pérez',
-        role: 'Técnico en plomería',
-        rating: '4.9',
-        stats: [
-            { label: 'Trabajos', value: '86' },
-            { label: 'Este mes', value: 'RD$ 24k' },
-            { label: 'Reseñas', value: '4.9' },
-        ],
-        activity: [
-            { label: 'Reparación de fuga', amount: '+RD$ 1,200', time: 'Hoy' },
-            { label: 'Instalación de grifo', amount: '+RD$ 650', time: 'Ayer' },
-        ],
+    screens: {
+        primary: providerEarnings,
+        secondary: providerDetail,
+        tertiary: providerProfile,
     },
     ctaTitle: '¿Listo para hacer crecer tu negocio?',
     ctaDescription: 'Sé de los primeros profesionales en unirte a SOT Provider cuando esté disponible. Déjanos tu contacto y te avisamos.',
