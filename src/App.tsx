@@ -10,6 +10,8 @@ import Ecosystem from './components/Ecosystem';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import CookiesPolicy from './components/CookiesPolicy';
 
 function App() {
     return (
@@ -30,6 +32,10 @@ function App() {
                     <Route path="/privacidad" element={<PrivacyPolicy />} />
                     <Route path="/politica-de-privacidad" element={<Navigate to="/privacidad" replace />} />
                     <Route path="/privacy" element={<Navigate to="/privacidad" replace />} />
+                    <Route path="/terminos" element={<TermsOfService />} />
+                    <Route path="/terminos-de-servicio" element={<Navigate to="/terminos" replace />} />
+                    <Route path="/terms" element={<Navigate to="/terminos" replace />} />
+                    <Route path="/cookies" element={<CookiesPolicy />} />
                     <Route path="/sot-service" element={<SotServiceLanding />} />
                     <Route path="/sot-provider" element={<SotProviderLanding />} />
                     <Route path="/producto/sot-service" element={<Navigate to="/sot-service" replace />} />

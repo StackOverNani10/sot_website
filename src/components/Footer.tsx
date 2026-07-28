@@ -112,12 +112,12 @@ export default function Footer() {
                             <Link to="/privacidad" className="text-gray-400 hover:text-white transition-colors">
                                 Política de Privacidad
                             </Link>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                            <Link to="/terminos" className="text-gray-400 hover:text-white transition-colors">
                                 Términos de Servicio
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                            </Link>
+                            <Link to="/cookies" className="text-gray-400 hover:text-white transition-colors">
                                 Cookies
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

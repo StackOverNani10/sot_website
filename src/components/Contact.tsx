@@ -130,6 +130,7 @@ export default function Contact() {
                                     className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all bg-gray-700/50 text-white"
                                 >
                                     <option value="general">Consulta general</option>
+                                    <option value="app-notify">Notificarme sobre el lanzamiento de la app</option>
                                     <option value="demo">Solicitar demostración</option>
                                     <option value="partnership">Alianza estratégica</option>
                                     <option value="investment">Oportunidad de inversión</option>

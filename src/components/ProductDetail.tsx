@@ -48,27 +48,6 @@ export default function ProductDetail() {
                 'Mejora la experiencia del cliente'
             ]
         },
-        'sot-service': {
-            name: 'SOT Service',
-            tagline: 'Servicios a Domicilio',
-            fullDescription: 'SOT Service es una aplicación móvil innovadora que conecta usuarios con técnicos y profesionales de servicios calificados. Esta plataforma optimiza el proceso de solicitud de servicios a domicilio, garantizando tiempos de respuesta rápidos y calidad verificada.',
-            icon: '🔧',
-            color: 'from-blue-500 to-cyan-600',
-            features: [
-                'Conexión instantánea con profesionales',
-                'Seguimiento en tiempo real del servicio',
-                'Sistema de calificaciones y reseñas',
-                'Pagos seguros y protegidos',
-                'Historial completo de servicios',
-                'Soporte técnico 24/7'
-            ],
-            benefits: [
-                'Encuentra profesionales cerca de ti',
-                'Ahorra tiempo en búsqueda',
-                'Garantía de calidad verificada',
-                'Precios transparentes'
-            ]
-        },
         'sot-move': {
             name: 'SOT Move',
             tagline: 'Movilidad Eléctrica',

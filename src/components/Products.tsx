@@ -1,5 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { UtensilsCrossed, Wrench, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { UtensilsCrossed, Wrench, Briefcase, Sparkles, Zap, ArrowRight } from 'lucide-react';
+
+const dedicatedLandingPages: Record<string, string> = {
+    'sot-service': '/sot-service',
+    'sot-provider': '/sot-provider',
+};
 
 export default function Products() {
     const navigate = useNavigate();
@@ -18,10 +23,19 @@ export default function Products() {
             id: 'sot-service',
             icon: Wrench,
             name: 'SOT Service',
-            tagline: 'Servicios a Domicilio',
+            tagline: 'Servicios a Domicilio · App Cliente',
             description: 'App móvil que conecta usuarios con técnicos y profesionales de servicios, optimizando tiempos y garantizando calidad.',
             color: 'from-blue-500 to-cyan-600',
             features: ['Conexión instantánea', 'Seguimiento en tiempo real', 'Calificaciones verificadas', 'Pagos seguros']
+        },
+        {
+            id: 'sot-provider',
+            icon: Briefcase,
+            name: 'SOT Provider',
+            tagline: 'Servicios a Domicilio · App Profesional',
+            description: 'App móvil para técnicos y profesionales que quieren gestionar solicitudes, agenda y cobros desde su celular.',
+            color: 'from-violet-500 to-indigo-600',
+            features: ['Solicitudes en tiempo real', 'Gestión de agenda', 'Pagos directos', 'Estadísticas de ingresos']
         },
         {
             id: 'sot-move',
@@ -44,7 +58,7 @@ export default function Products() {
     ];
 
     const handleLearnMore = (productId: string) => {
-        navigate(`/producto/${productId}`);
+        navigate(dedicatedLandingPages[productId] ?? `/producto/${productId}`);
     };
 
     return (
